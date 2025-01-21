@@ -1,0 +1,32 @@
+server: port=8080
+
+spring:
+  application:
+    name: ASM_1
+  datasource:
+    url: jdbc:postgresql://localhost:6543/custom-provider
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/ASM
+
+
+
+idp:
+  url: http://localhost:9090/
+  client-id: asm-1
+  client-secret: R6GG8eAk5O33fksKUkHfJfdecT0ffR9l
+
+
